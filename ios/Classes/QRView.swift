@@ -77,6 +77,9 @@ public class QRView:NSObject,FlutterPlatformView {
                     self?.getFlashInfo(result)
                 case "getSystemFeatures":
                     self?.getSystemFeatures(result)
+                case "scanQrcodeFromGallery":
+                    let imagePath = call.arguments as! String
+                    self?.scanQrcodeFromGallery(imagePath,result)
                 default:
                     result(FlutterMethodNotImplemented)
                     return
